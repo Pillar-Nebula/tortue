@@ -1,29 +1,18 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tortue Caouanne en AR</title>
-    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <title>AR Experience</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
 </head>
-<body>
+<body style="margin: 0; overflow: hidden;">
     <a-scene embedded arjs>
-        <!-- Chargement du modèle 3D -->
-        <a-assets>
-            <a-asset-item id="tortue" src="model_46a_-_subadult_green_sea_turtle.glb"></a-asset-item>
-        </a-assets>
-
-        <!-- Affichage de la tortue en 3D -->
-        <a-entity 
-            gltf-model="#tortue" 
-            position="0 0 -3" 
-            scale="1 1 1" 
-            rotation="0 180 0">
-        </a-entity>
-
-        <!-- Environnement -->
-        <a-light type="ambient" intensity="0.8"></a-light>
-        <a-sky color="#87CEEB"></a-sky>
+        <a-marker preset="hiro">
+            <a-entity gltf-model="url(https://votre-serveur.com/votre-fichier.glb)" scale="0.5 0.5 0.5"></a-entity>
+        </a-marker>
+        <a-entity camera></a-entity>
     </a-scene>
 </body>
 </html>
