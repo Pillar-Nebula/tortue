@@ -1,25 +1,29 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tortue Caouanne en AR</title>
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@google/model-viewer"></script>
-  </head>
-  <body>
-    <a-scene>
-      <a-assets>
-        <a-asset-item id="tortueModel" src="https://drive.google.com/file/d/1rFbZeToVjdAGFRvVL-jc6l6AFa-yDHsx/view?usp=drive_link"></a-asset-item>
-      </a-assets>
-      
-      <!-- Affichage du modèle 3D -->
-      <a-entity 
-        gltf-model="#tortueModel" 
-        position="0 1 -3" 
-        scale="1 1 1"
-        rotation="0 180 0"
-      ></a-entity>
+</head>
+<body>
+    <a-scene embedded arjs>
+        <!-- Chargement du modèle 3D -->
+        <a-assets>
+            <a-asset-item id="tortue" src="https://drive.google.com/file/d/1rFbZeToVjdAGFRvVL-jc6l6AFa-yDHsx/view?usp=drive_link"></a-asset-item>
+        </a-assets>
 
-      <!-- Ajout d'un environnement -->
-      <a-sky color="#ECECEC"></a-sky>
+        <!-- Affichage de la tortue en 3D -->
+        <a-entity 
+            gltf-model="#tortue" 
+            position="0 0 -3" 
+            scale="1 1 1" 
+            rotation="0 180 0">
+        </a-entity>
+
+        <!-- Environnement -->
+        <a-light type="ambient" intensity="0.8"></a-light>
+        <a-sky color="#87CEEB"></a-sky>
     </a-scene>
-  </body>
+</body>
 </html>
